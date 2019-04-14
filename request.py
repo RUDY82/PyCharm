@@ -65,11 +65,10 @@ def UpdatesPet(url):
   Updates = requests.put(url, json=PutDic)
   print(Updates.json())
 
-def UpdatesFormData(url, id):
-  id = PetRequest_byID.json(url, 23)
+def UpdatesFormData(url):
   UpdatesF = requests.post(url, json=PetData)
 
-  print(UpdatesF.id())
+  print(UpdatesF.json())
 
 GetForPet(url)
 
@@ -81,7 +80,7 @@ UpdatesPet(url)
 FindByStatus = requests.get(url + "findByStatus?status=OK")
 print(FindByStatus.json())
 
-UpdatesFormData(url, 23)
+UpdatesFormData(url)
 
 
 
