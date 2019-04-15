@@ -82,10 +82,25 @@ print(FindByStatus.json())
 
 UpdatesFormData(url)
 
-
-
-
-#UpdatesPet(url)
-
 #CreatePet = requests.post(url, json = PetDic)
 #print (CreatePet.json())
+
+#Онлайн поиск в справочнике населенных пунктов
+url1 = "http://testapi.novaposhta.ua/v2.0/json/Address/searchSettlements/"
+
+NovPo = {
+"apiKey": "[ВАШ КЛЮЧ]",
+ "modelName": "Address",
+    "calledMethod": "searchSettlements",
+    "methodProperties": {
+        "CityName": "київ",
+        "Limit": 5
+    }
+}
+
+def NovaPochta(url1):
+  CreateNP = requests.post(url1, json=NovPo)
+  print(CreateNP.json())
+
+
+NovaPochta(url1)
